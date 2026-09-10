@@ -6,10 +6,17 @@ export default function Hero({
   tagline,
 }: Pick<Profile, "name" | "affiliation" | "tagline">) {
   return (
-    <header className="flex flex-col gap-2">
-      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{name}</h1>
-      <p className="text-zinc-600 dark:text-zinc-400">{affiliation}</p>
-      <p className="text-lg text-zinc-800 dark:text-zinc-200">{tagline}</p>
+    <header className="grid gap-4 border-b border-foreground/10 pb-11">
+      <span className="font-mono text-[11px] tracking-[0.32em] text-accent">
+        PROFILE
+      </span>
+      <h1 className="font-display text-[clamp(42px,7vw,68px)] leading-[1.05] tracking-tight text-foreground">
+        {name}
+      </h1>
+      <p className="text-lg leading-relaxed text-accent sm:text-xl">
+        {tagline}
+      </p>
+      <p className="text-sm text-foreground/60">{affiliation}</p>
     </header>
   );
 }

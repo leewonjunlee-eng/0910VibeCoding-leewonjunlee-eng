@@ -5,27 +5,30 @@ export default function Interests({
   currentProject,
 }: Pick<Profile, "interests" | "currentProject">) {
   return (
-    <section className="flex flex-col gap-4">
-      <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-500">
-        관심사
-      </h2>
-      <ul className="flex flex-wrap gap-2">
+    <section className="grid gap-6 border-b border-foreground/10 py-14">
+      <span className="font-mono text-[11px] tracking-[0.28em] text-foreground/45">
+        02&nbsp;&nbsp;관심사 / FOCUS
+      </span>
+      <div className="flex flex-wrap gap-2">
         {interests.map((interest) => (
-          <li
+          <span
             key={interest}
-            className="rounded-full border border-zinc-300 px-3 py-1 text-sm text-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+            className="rounded-full border border-foreground/18 px-4 py-2 text-[13px] transition-colors hover:border-accent hover:text-accent"
           >
             {interest}
-          </li>
+          </span>
         ))}
-      </ul>
-      <div className="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
-        <p className="font-medium text-zinc-900 dark:text-zinc-100">
-          {currentProject.title}
-        </p>
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-          {currentProject.description}
-        </p>
+      </div>
+      <div className="grid grid-cols-[58px_1fr] items-baseline gap-4 border-t border-foreground/10 pt-5">
+        <span className="font-mono text-[11px] text-foreground/45">NOW</span>
+        <div className="grid gap-1.5">
+          <p className="font-serif text-[17px] font-semibold">
+            {currentProject.title}
+          </p>
+          <p className="text-[14px] leading-[1.8] text-foreground/62">
+            {currentProject.description}
+          </p>
+        </div>
       </div>
     </section>
   );

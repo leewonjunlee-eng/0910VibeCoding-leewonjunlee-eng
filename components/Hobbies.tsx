@@ -2,20 +2,20 @@ import { Profile } from "@/data/types";
 
 export default function Hobbies({ hobbies }: Pick<Profile, "hobbies">) {
   return (
-    <section className="flex flex-col gap-4">
-      <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-500">
-        취미
-      </h2>
-      <ul className="flex flex-wrap gap-2">
+    <section className="grid gap-6 border-b border-foreground/10 py-14">
+      <span className="font-mono text-[11px] tracking-[0.28em] text-foreground/45">
+        03&nbsp;&nbsp;취미 / OFF-HOURS
+      </span>
+      <div className="flex flex-wrap gap-2">
         {hobbies.map((hobby) => (
-          <li
+          <span
             key={hobby}
-            className="rounded-full bg-zinc-100 px-3 py-1 text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200"
+            className="rounded-full border border-foreground/18 px-4 py-2 text-[13px] transition-colors hover:border-accent-gold hover:text-accent-gold"
           >
             {hobby}
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
